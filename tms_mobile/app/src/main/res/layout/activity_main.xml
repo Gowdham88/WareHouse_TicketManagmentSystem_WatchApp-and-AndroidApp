@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_toolbar"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/lightblue">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size120"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:weightSum="2"
+            android:layout_marginTop="@dimen/size20"
+            >
+
+            <LinearLayout
+                android:padding="@dimen/size10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:gravity="center">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/userDate"
+                        android:layout_marginTop="@dimen/size10"
+                        android:text="DATE:"
+                        android:textSize="@dimen/text16"
+                        android:textColor="@android:color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/inputDate"
+                        android:layout_marginTop="@dimen/size10"
+                        android:text="11/04/19"
+                        android:layout_toRightOf="@id/userDate"
+                        android:layout_marginLeft="@dimen/size10"
+                        android:textSize="@dimen/text16"
+                        android:textColor="@color/nokia_blue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/size50" />
+
+                </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/size10"
+                    android:paddingBottom="@dimen/size10"
+                    android:paddingRight="@dimen/size10"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/userShift"
+                            android:layout_marginTop="@dimen/size10"
+                            android:text="SHIFT:"
+                            android:textSize="@dimen/text16"
+                            android:textColor="@android:color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:id="@+id/inputShift"
+                            android:layout_marginTop="@dimen/size10"
+                            android:text="SHIFT:A \n 09.00am"
+                            android:layout_toRightOf="@+id/userShift"
+                            android:layout_marginLeft="@dimen/size10"
+                            android:textSize="@dimen/text16"
+                            android:textColor="@color/nokia_blue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/size50" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size10"
+        android:background="@color/lightblue1"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/darkviolet">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:id="@+id/linearLayout"
+            android:paddingTop="@dimen/size20">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/main_open"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/size80"
+                        android:src="@drawable/bell_3"/>
+                    <TextView
+                        android:id="@+id/tot_open"
+                        android:layout_width="@dimen/size20"
+                        android:layout_height="@dimen/size20"
+                        android:layout_marginStart="@dimen/size70"
+                        android:text="0"
+                        android:textSize="@dimen/text14"
+                        android:gravity="center"
+                        android:background="@drawable/round_corner"
+                        android:textColor="@android:color/black"/>
+                </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Open"
+                    android:textSize="@dimen/text16"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/main_ongoing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/size80"
+                        android:src="@drawable/tool_1"/>
+                    <TextView
+                        android:id="@+id/tot_on"
+                        android:layout_width="@dimen/size20"
+                        android:layout_height="@dimen/size20"
+                        android:layout_marginStart="@dimen/size70"
+                        android:text="0"
+                        android:textSize="@dimen/text14"
+                        android:gravity="center"
+                        android:background="@drawable/round_corner"
+                        android:textColor="@android:color/black"/>
+                </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Ongoing"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text16"
+                    android:textColor="@android:color/white"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/main_close"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/size80"
+                        android:src="@drawable/smile"/>
+                    <TextView
+                        android:id="@+id/tot_close"
+                        android:layout_width="@dimen/size20"
+                        android:layout_height="@dimen/size20"
+                        android:layout_marginStart="@dimen/size70"
+                        android:text="0"
+                        android:textSize="@dimen/text14"
+                        android:gravity="center"
+                        android:background="@drawable/round_corner"
+                        android:textColor="@android:color/black"/>
+                </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Closed"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text16"
+                    android:textColor="@android:color/white"/>
+            </LinearLayout>
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/darkviolet">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/size25"
+                android:id="@+id/textlayout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/size50"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/size2"
+                    android:text="TOTAL TICKET:"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text16" />
+
+                <TextView
+                    android:id="@+id/totaltic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:padding="@dimen/size2"
+                    android:text="0"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text16" />
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/btnTrend"
+                android:layout_below="@+id/textlayout"
+                android:layout_width="@dimen/size40"
+                android:layout_height="@dimen/size40"
+                android:layout_marginTop="@dimen/size20"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/trend" />
+            <TextView
+                android:id="@+id/btntext"
+                android:layout_below="@+id/btnTrend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TREND"
+                android:textSize="@dimen/text16"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                />
+        <View
+            android:id="@+id/simpleView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size8"
+            android:layout_alignParentBottom="true"
+            android:background="@color/lightblue1"/>
+    </RelativeLayout>
+</LinearLayout>
+</LinearLayout>

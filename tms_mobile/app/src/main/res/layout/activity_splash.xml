@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashActivity"
+    android:background="@color/nokia_blue">
+
+    <ImageView
+        android:layout_margin="@dimen/size10"
+        android:layout_width="@dimen/size90"
+        android:layout_height="@dimen/size50"
+        android:src="@drawable/nokia_1"
+        android:layout_marginTop="20dp"
+        android:layout_above="@+id/dwf"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/dwf"
+        android:layout_height="wrap_content"
+        android:text="DIGITAL\nWORK\nFORCE"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="@dimen/size50"
+        android:layout_centerVertical="true"
+        android:textColor="@android:color/white"/>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="powered by"
+            android:textColor="@android:color/white"/>
+        <ImageView
+            android:layout_width="@dimen/size90"
+            android:layout_height="wrap_content"
+            android:src="@drawable/orkcomm" />
+    </LinearLayout>
+
+</RelativeLayout>

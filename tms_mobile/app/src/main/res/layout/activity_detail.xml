@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity"
+    android:background="@color/darkviolet"
+    android:orientation="vertical">
+    <include layout="@layout/layout_toolbar" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/size20"
+        android:paddingRight="@dimen/size20"
+        android:paddingLeft="@dimen/size20"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/size30">
+
+            <TextView
+                android:id="@+id/ticket"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="TICKET ID"
+                android:textSize="@dimen/text16"
+                android:textColor="@android:color/white"
+                android:layout_width="0dp" />
+
+            <TextView
+                android:id="@+id/ticket_id"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text=":"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text16" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginBottom="@dimen/size30"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/operatorId"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="OPERATION"
+                android:textSize="@dimen/text16"
+                android:textColor="@android:color/white"/>
+
+            <TextView
+                android:id="@+id/user_opId"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text16" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginBottom="@dimen/size30"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tester"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="TESTER NAME"
+                android:textSize="@dimen/text16"
+                android:textColor="@android:color/white"/>
+
+            <TextView
+                android:id="@+id/user_tester"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text16" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginBottom="@dimen/size30"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/downtime"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="DOWNTIME"
+                android:textSize="@dimen/text16"
+                android:textColor="@android:color/white"/>
+
+            <TextView
+                android:id="@+id/user_downtime"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text=":"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text16" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginBottom="@dimen/size30"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/item"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="ITEM"
+                android:textSize="@dimen/text16"
+                android:textColor="@android:color/white"/>
+
+            <TextView
+                android:id="@+id/user_item"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text=":"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text16" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginBottom="@dimen/size30"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/product"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="PRODUCT"
+                android:textSize="@dimen/text16"
+                android:textColor="@android:color/white"/>
+
+            <TextView
+                android:id="@+id/user_product"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text=":"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text16" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginBottom="@dimen/size30"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/line"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="LINE"
+                android:textSize="@dimen/text16"
+                android:textColor="@android:color/white"/>
+
+            <TextView
+                android:id="@+id/user_line"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text=":"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text16" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginBottom="@dimen/size30"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/status"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="STATUS"
+                android:textSize="@dimen/text16"
+                android:textColor="@android:color/white"/>
+
+            <TextView
+                android:id="@+id/user_status"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text=":"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text16" />
+        </LinearLayout>
+       <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginBottom="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/elapse"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="ELAPSETIME"
+                android:textSize="@dimen/text16"
+                android:textColor="@android:color/white"/>
+
+            <TextView
+                android:id="@+id/user_elapse"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text=":"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text16" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

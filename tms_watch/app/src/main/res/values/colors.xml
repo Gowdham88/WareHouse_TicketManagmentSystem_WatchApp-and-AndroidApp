@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="violet">#2E36B3</color>
+    <color name="gray">#DBDBDB</color>
+    <color name="green">#00796B</color>
+    <color name="blue">#5F9BB8</color>
+    <color name="lightblue">#92D6F8</color>
+    <color name="lightblue1">#B1DBFA</color>
+    <color name="darkviolet">#1C0264</color>
+    <color name="darkviolet1">#302C44</color>
+    <color name="nokia_blue">#124191</color>
+
+</resources>

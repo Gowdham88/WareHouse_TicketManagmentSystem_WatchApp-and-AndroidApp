@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StatusActivity"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_toolbar"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/darkviolet1"
+        android:padding="20dp">
+
+        <ImageView
+            android:layout_width="@dimen/size40"
+            android:layout_height="@dimen/size40"
+            android:src="@drawable/trend"/>
+
+        <TextView
+            android:text="TREND"
+            android:layout_marginLeft="@dimen/size10"
+            android:layout_gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/size20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/darkviolet">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/size30"
+                android:id="@+id/linearLayout">
+                <TextView
+                    android:text="OPTIONS:"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/size20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <RelativeLayout
+                    android:layout_marginLeft="@dimen/size20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/violet">
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="@dimen/size160"
+                    android:popupBackground="@color/violet"
+                    android:layout_height="wrap_content">
+                </Spinner>
+                </RelativeLayout>
+            </LinearLayout>
+
+
+
+            <ImageView
+                android:id="@+id/graph"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_width="@dimen/size180"
+                android:layout_height="@dimen/size180"
+                android:visibility="invisible"
+                android:src="@drawable/arrow"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/linearLayout">
+
+                <lecho.lib.hellocharts.view.PieChartView
+                    android:id="@+id/chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size250" />
+                <View
+                    android:id="@+id/view_open"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="@dimen/size5"
+                    android:layout_marginStart="@dimen/size10"
+                    android:layout_below="@+id/chart"
+                    android:background="@android:color/white"/>
+          <TextView
+                android:layout_below="@id/chart"
+                android:id="@+id/live_open_name"
+                android:layout_toRightOf="@+id/view_open"
+                android:layout_marginStart="@dimen/size30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:text="ICT"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="@dimen/text16" />
+
+                <View
+                    android:id="@+id/view_ongoing"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="@dimen/size15"
+                    android:layout_marginStart="@dimen/size10"
+                    android:layout_below="@+id/view_open"
+                    android:background="@android:color/white"/>
+
+            <TextView
+                android:id="@+id/live_ongoing_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:text="MPT"
+                android:layout_marginStart="@dimen/size30"
+                android:layout_below="@id/live_open_name"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text16" />
+
+                <View
+                    android:id="@+id/view_close"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="@dimen/size15"
+                    android:layout_marginStart="@dimen/size10"
+                    android:layout_below="@+id/view_ongoing"
+                    android:background="@android:color/white"/>
+
+            <TextView
+                android:id="@+id/live_close_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size30"
+                android:layout_below="@id/live_ongoing_name"
+                android:text="OTHER"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text16" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TMS</string>
+    
+    <string-array name="string_menu">
+        <item>LIVE</item>
+        <item>LINE LOCATION</item>
+    </string-array>
+
+    <string name="default_notificatio_channel">11</string>
+</resources>

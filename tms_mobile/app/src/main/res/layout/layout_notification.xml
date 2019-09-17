@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/size10">
+
+        <ImageView
+            android:layout_marginTop="@dimen/size8"
+            android:layout_width="@dimen/size50"
+            android:layout_height="@dimen/size50"
+            android:visibility="invisible"
+            android:src="@drawable/ic_user"
+            android:layout_alignParentRight="true"/>
+        <TextView
+            android:id="@+id/not_ticketId"
+            android:layout_marginTop="@dimen/size8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.Compat.Notification.Title"
+            android:text="Ticket ID:54321098761"
+            android:textStyle="bold"
+            android:textSize="@dimen/text12"
+            android:textColor="@android:color/black"/>
+        <TextView
+            android:id="@+id/not_openTicket"
+            android:layout_marginTop="@dimen/size6"
+            android:layout_below="@+id/not_ticketId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.Compat.Notification.Info"
+            android:text="TOTAL OPEN TICKET:5"
+            android:textSize="@dimen/text10" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        android:padding="@dimen/size4">
+        <TextView
+            android:id="@+id/not_machinedown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Operation Id: MACHINE DOWN"
+            android:textSize="@dimen/text10"
+            android:textColor="@color/green"/>
+        <TextView
+            android:id="@+id/not_reply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="REPLY"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/text8"
+            android:textColor="@color/green"/>
+    </RelativeLayout>
+</LinearLayout>

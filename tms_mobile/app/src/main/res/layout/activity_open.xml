@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OpenActivity"
+    android:orientation="vertical"
+    android:background="@color/darkviolet">
+
+    <include layout="@layout/layout_toolbar"/>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/darkviolet1"
+        android:padding="8dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/status_icon"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/ic_open"/>
+            <TextView
+                android:id="@+id/tot_open"
+                android:layout_width="@dimen/size20"
+                android:layout_height="@dimen/size20"
+                android:layout_marginStart="@dimen/size60"
+                android:text="0"
+                android:textSize="@dimen/text14"
+                android:gravity="center"
+                android:background="@drawable/round_corner"
+                android:textColor="@android:color/black"/>
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/status_text"
+            android:layout_marginStart="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            android:text="OPEN"
+            android:layout_gravity="center_vertical"
+            android:textColor="@android:color/white"
+            />
+    </LinearLayout>
+    <include layout="@layout/recycler_open"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <View
+            android:layout_width="8dp"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/white"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/lightblue1"/>
+    </RelativeLayout>
+
+</LinearLayout>
