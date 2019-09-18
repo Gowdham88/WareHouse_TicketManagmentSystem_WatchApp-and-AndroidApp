@@ -11,5 +11,5 @@ public class AppUrls {
     public static String DETAIL_URL=BASE_TEST+"api/TMS/GetTicketDetails?TicketId=";
     public static String HOME_URL=BASE_TEST+"api/TMS/GetTable?LastHour=1000";
     public static String NOTIFICATION_CHECK=BASE_TEST+"api/TMS/GetLastTicketId";
-
+    
 }

@@ -4,6 +4,16 @@ public class OpenModel {
     public String ticketId;
     public String ticketStatus;
 
+    public String getDownTime() {
+        return downTime;
+    }
+
+    public void setDownTime(String downTime) {
+        this.downTime = downTime;
+    }
+
+    public String downTime;
+
     public String getRemarks() {
         return remarks;
     }
@@ -23,11 +33,12 @@ public class OpenModel {
         this.id = id;
     }
 
-    public OpenModel(String ticketId, String ticketStatus, long id,String remarks) {
+    public OpenModel(String ticketId, String ticketStatus, long id,String remarks,String downTime) {
         this.ticketId = ticketId;
         this.ticketStatus = ticketStatus;
         this.id=id;
         this.remarks=remarks;
+        this.downTime=downTime;
     }
 
     public OpenModel() {

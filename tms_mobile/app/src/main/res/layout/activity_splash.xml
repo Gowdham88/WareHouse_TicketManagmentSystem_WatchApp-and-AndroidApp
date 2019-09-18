@@ -8,11 +8,10 @@
     android:background="@color/nokia_blue">
 
     <ImageView
-        android:layout_margin="@dimen/size10"
-        android:layout_width="@dimen/size90"
-        android:layout_height="@dimen/size50"
+        android:layout_marginBottom="@dimen/size50"
+        android:layout_width="@dimen/size220"
+        android:layout_height="@dimen/size60"
         android:src="@drawable/nokia_1"
-        android:layout_marginTop="20dp"
         android:layout_above="@+id/dwf"
         android:layout_centerHorizontal="true"
         android:scaleType="centerCrop"/>
@@ -23,8 +22,9 @@
         android:layout_height="wrap_content"
         android:text="DIGITAL\nWORK\nFORCE"
         android:gravity="center"
+        android:fontFamily="@font/nokia_font"
         android:textAlignment="center"
-        android:textSize="@dimen/size50"
+        android:textSize="@dimen/size30"
         android:layout_centerVertical="true"
         android:textColor="@android:color/white"/>
 

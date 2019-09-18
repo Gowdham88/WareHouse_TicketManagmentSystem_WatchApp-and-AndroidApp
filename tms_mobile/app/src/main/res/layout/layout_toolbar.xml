@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="@dimen/size50">
 
     <RelativeLayout
         android:padding="10dp"
@@ -12,19 +12,25 @@
         android:layout_height="wrap_content"
         android:background="@android:color/white">
 
-         <ImageView
-             android:layout_width="30dp"
-             android:layout_height="30dp"
-             android:visibility="invisible"
-             android:src="@mipmap/ic_menu"/>
+         <TextView
+             android:layout_width="@dimen/size50"
+             android:layout_height="@dimen/size20"
+             android:text="DWF"
+             android:gravity="center"
+             android:textColor="@color/nokia_blue"
+             android:layout_alignParentEnd="true"
+             android:textStyle="bold"
+             android:layout_alignParentBottom="true"
+             android:fontFamily="@font/nokia_font"/>
 
         <ImageView
             android:id="@+id/tool_brandName"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
+            android:layout_width="180dp"
+            android:layout_height="50dp"
             android:src="@drawable/nokia_png"
             android:visibility="visible"
+            android:layout_centerHorizontal="true"
             android:scaleType="centerCrop"
-            android:layout_alignParentRight="true"/>
+            />
     </RelativeLayout>
 </LinearLayout>

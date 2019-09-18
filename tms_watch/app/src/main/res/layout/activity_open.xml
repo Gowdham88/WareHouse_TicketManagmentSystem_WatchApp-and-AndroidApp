@@ -45,14 +45,14 @@
                 />
                 <TextView
                     android:id="@+id/tot_open"
-                    android:layout_width="30dp"
+                    android:layout_width="40dp"
                     android:layout_height="30dp"
                     android:text="0"
-                    android:textSize="16sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     android:gravity="center"
                     android:layout_gravity="center"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="20dp"
                     android:textColor="@android:color/black"
                     android:background="@drawable/box_corner"/>
                 <TextView

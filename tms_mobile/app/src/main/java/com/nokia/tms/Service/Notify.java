@@ -57,7 +57,6 @@ public class Notify extends JobService {
         if(sharedPreferences.getInt(UPDATED_ID,0)!=0)
             lastUpdatedticket=sharedPreferences.getInt(UPDATED_ID,0);
         doBackgroundWork(params);
-        Toast.makeText(getApplicationContext(),"running",Toast.LENGTH_SHORT).show();
         return true;
     }
 
@@ -115,7 +114,11 @@ public class Notify extends JobService {
     public boolean onStopJob(JobParameters params) {
         Log.d(TAG, "Job cancelled before completion");
         jobCancelled = true;
-        executer.cancel(true);
+        try {
+            executer.cancel(true);
+        }catch (NullPointerException n){
+            n.printStackTrace();
+        }
         return true;
     }
 

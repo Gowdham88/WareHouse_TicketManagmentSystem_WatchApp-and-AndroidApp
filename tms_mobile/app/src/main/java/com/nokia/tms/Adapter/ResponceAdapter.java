@@ -2,26 +2,26 @@ package com.nokia.tms.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.nokia.tms.DetailActivity;
 import com.nokia.tms.Model.OpenModel;
+import com.nokia.tms.Model.OpenModelResponce;
 import com.nokia.tms.R;
 
 import java.util.ArrayList;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+public class ResponceAdapter extends RecyclerView.Adapter<ResponceAdapter.ViewHolder> {
 
-public class ModelAdapter extends RecyclerView.Adapter<ModelAdapter.ViewHolder> {
-
-    ArrayList<OpenModel> models;
+    ArrayList<OpenModelResponce> models;
     Context context;
-    public  ModelAdapter(ArrayList<OpenModel> models, Context context){
+    public ResponceAdapter(ArrayList<OpenModelResponce> models, Context context){
         this.models=models;
         this.context=context;
     }
@@ -30,17 +30,16 @@ public class ModelAdapter extends RecyclerView.Adapter<ModelAdapter.ViewHolder> 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_item,parent,false);
+        View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_responce_item,parent,false);
         return new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
         if(models.size()>0) {
-            final OpenModel model = models.get(position);
-            holder.textId.setText(String.valueOf(model.getTicketId()));
+            final OpenModelResponce model = models.get(position);
+            holder.textId.setText(String.valueOf(model.getId()));
             holder.textStatus.setText(String.valueOf(model.getRemarks()));
-            holder.textElapse.setText(model.getDownTime());
             holder.textId.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -63,12 +62,10 @@ public class ModelAdapter extends RecyclerView.Adapter<ModelAdapter.ViewHolder> 
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView textId;
         TextView textStatus;
-        TextView textElapse;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             textId=(TextView) itemView.findViewById(R.id.recycler_ID);
             textStatus=(TextView) itemView.findViewById(R.id.recyclerStatus);
-            textElapse=(TextView)itemView.findViewById(R.id.recyclerElapse);
         }
     }
 }

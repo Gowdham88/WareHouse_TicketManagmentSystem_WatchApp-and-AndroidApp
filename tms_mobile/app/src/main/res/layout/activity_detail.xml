@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DetailActivity"
-    android:background="@color/darkviolet"
+    android:background="@color/nokia_blue"
     android:orientation="vertical">
     <include layout="@layout/layout_toolbar" />
     <LinearLayout
@@ -81,7 +81,7 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="TESTER NAME"
+                android:text="TESTER"
                 android:textSize="@dimen/text16"
                 android:textColor="@android:color/white"/>
 
@@ -130,16 +130,16 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/item"
+                android:id="@+id/elapse_time"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="ITEM"
+                android:text="ELAPSE TIME"
                 android:textSize="@dimen/text16"
                 android:textColor="@android:color/white"/>
 
             <TextView
-                android:id="@+id/user_item"
+                android:id="@+id/user_elapse"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -157,16 +157,16 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/product"
+                android:id="@+id/remarks"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="PRODUCT"
+                android:text="REMARKS"
                 android:textSize="@dimen/text16"
                 android:textColor="@android:color/white"/>
 
             <TextView
-                android:id="@+id/user_product"
+                android:id="@+id/user_remarks"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -229,31 +229,6 @@
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/text16" />
         </LinearLayout>
-       <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="2"
-            android:layout_marginBottom="30dp"
-            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/elapse"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="ELAPSETIME"
-                android:textSize="@dimen/text16"
-                android:textColor="@android:color/white"/>
-
-            <TextView
-                android:id="@+id/user_elapse"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:text=":"
-                android:textColor="@android:color/white"
-                android:textSize="@dimen/text16" />
         </LinearLayout>
-    </LinearLayout>
 </LinearLayout>

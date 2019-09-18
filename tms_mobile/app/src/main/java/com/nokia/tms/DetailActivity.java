@@ -32,10 +32,10 @@ import java.util.TimeZone;
 
 public class DetailActivity extends Activity {
 
-    String id;
+    String id,mRemarks;
     static String URL=AppUrls.DETAILS_URL;
     RequestQueue requestQueue;
-    TextView ticket_Id,opId,tester_Id,downTime,item,product,line,status,elapse_time;
+    TextView ticket_Id,opId,tester_Id,downTime,item,remarks,line,status,elapse_time,_remarks,_elapse;
 
     ProgressDialog dialog;
 
@@ -49,6 +49,7 @@ public class DetailActivity extends Activity {
 
         requestQueue= Volley.newRequestQueue(this);
         id= getIntent().getStringExtra("Id");
+        mRemarks=getIntent().getStringExtra("Remarks");
         dialog=new ProgressDialog(this);
 
         intialize();
@@ -63,9 +64,12 @@ public class DetailActivity extends Activity {
         downTime=(TextView)findViewById(R.id.user_downtime);
         line=(TextView)findViewById(R.id.user_line);
         status=(TextView)findViewById(R.id.user_status);
-        item=(TextView)findViewById(R.id.user_item);
-        product=(TextView)findViewById(R.id.user_product);
+        remarks=(TextView)findViewById(R.id.user_remarks);
         elapse_time=findViewById(R.id.user_elapse);
+        _remarks=findViewById(R.id.remarks);
+        _elapse=findViewById(R.id.elapse_time);
+
+
 
         dialog.setTitle("Loading..");
         dialog.setMessage("Please Wait...");
@@ -85,8 +89,8 @@ public class DetailActivity extends Activity {
                         String testerId=object.getString("TesterId");
                         String operationId=object.getString("OperationId");
                         String openTime=object.getString("OpenTime");
-                        String ItemCode=object.getString("ItemCode");
-                        String ProductCode=object.getString("ProductCode");
+                        //String ItemCode=object.getString("ItemCode");
+                       // String ProductCode=object.getString("ProductCode");
                         String Line=object.getString("Line");
                         String Status=object.getString("Status");
 
@@ -113,16 +117,20 @@ public class DetailActivity extends Activity {
                             Log.v("Exception", ex.getLocalizedMessage());
                         }
 
+                        _remarks.setText("REMARKS");
+                        _elapse.setText("ELAPSE TIME");
+                        remarks.setText(mRemarks);
+                        elapse_time.setText(":"+(((elapsedDays)+":"+elapsedHours)+":"+elapsedMinutes+" min"));
 
                         ticket_Id.setText(":"+String.valueOf(ticketId));
                         tester_Id.setText(":"+testerId);
                         opId.setText(":"+operationId);
                         downTime.setText(":"+openTime);
-                        item.setText(":"+ItemCode);
-                        product.setText(":"+ProductCode);
+                       // item.setText(":"+ItemCode);
+                       // product.setText(":"+ProductCode);
                         line.setText(":"+Line);
                         status.setText(":"+Status);
-                        elapse_time.setText(":"+(((elapsedDays*24)+elapsedHours)+":"+elapsedMinutes+" min"));
+
 
                     } catch (JSONException e) {
                         e.printStackTrace();

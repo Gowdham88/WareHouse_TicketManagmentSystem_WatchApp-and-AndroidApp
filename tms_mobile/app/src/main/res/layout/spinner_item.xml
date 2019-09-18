@@ -5,5 +5,5 @@
     android:textSize="@dimen/text18"
     android:background="@null"
     android:textAlignment="center"
-    android:textColor="@android:color/white"
+    android:textColor="@color/nokia_blue"
     xmlns:android="http://schemas.android.com/apk/res/android" />

@@ -157,7 +157,8 @@ public class MainActivity extends Activity {
     }
 
     void showTotal(){
-
+        total_open=0;
+        total_ongoing=0;
         JsonArrayRequest request=new JsonArrayRequest(AppUrls.HOME_URL, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
@@ -187,6 +188,19 @@ public class MainActivity extends Activity {
         });
 
         requestQueue.add(request);
+
+       Thread t=new Thread(new Runnable() {
+           @Override
+           public void run() {
+               try {
+                   Thread.sleep(10000);
+                   showTotal();
+               } catch (InterruptedException e) {
+                   e.printStackTrace();
+               }
+           }
+       });
+       t.start();
     }
     void Quit(){
         final AlertDialog alertDialog;

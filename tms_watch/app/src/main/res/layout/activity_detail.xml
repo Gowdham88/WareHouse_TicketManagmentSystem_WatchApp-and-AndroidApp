@@ -49,14 +49,14 @@
                 />
             <TextView
                 android:id="@+id/tot_open"
-                android:layout_width="30dp"
+                android:layout_width="40dp"
                 android:layout_height="30dp"
                 android:text="10"
                 android:layout_gravity="center"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 android:gravity="center"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="20dp"
                 android:textColor="@android:color/black"
                 android:background="@drawable/box_corner"/>
             <TextView
@@ -99,12 +99,12 @@
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:weightSum="2"
+            android:weightSum="5"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/ticket"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Ticket Id"
@@ -114,7 +114,7 @@
 
             <TextView
                 android:id="@+id/ticket_id"
-                android:layout_weight="1"
+                android:layout_weight="3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text=":"
@@ -127,12 +127,12 @@
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:weightSum="2"
+            android:weightSum="5"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/tester"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Tester Name"
@@ -142,7 +142,7 @@
 
             <TextView
                 android:id="@+id/user_tester"
-                android:layout_weight="1"
+                android:layout_weight="3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text=":"
@@ -157,12 +157,12 @@
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:weightSum="2"
+            android:weightSum="5"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/operatorId"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Operation"
@@ -172,7 +172,7 @@
 
             <TextView
                 android:id="@+id/user_opId"
-                android:layout_weight="1"
+                android:layout_weight="3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text=":"
@@ -186,12 +186,12 @@
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:weightSum="2"
+            android:weightSum="5"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/remarks"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Remarks"
@@ -201,7 +201,7 @@
 
             <TextView
                 android:id="@+id/user_remarks"
-                android:layout_weight="1"
+                android:layout_weight="3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
@@ -214,14 +214,14 @@
          <LinearLayout
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
-             android:weightSum="2"
+             android:weightSum="5"
              android:layout_marginTop="20dp"
              android:layout_marginBottom="30dp"
              android:orientation="horizontal">
 
              <TextView
                  android:id="@+id/elapse"
-                 android:layout_weight="1"
+                 android:layout_weight="2"
                  android:layout_width="0dp"
                  android:layout_height="wrap_content"
                  android:text="Elapse Time"
@@ -231,7 +231,7 @@
 
              <TextView
                  android:id="@+id/user_elapse"
-                 android:layout_weight="1"
+                 android:layout_weight="3"
                  android:layout_width="0dp"
                  android:layout_height="wrap_content"
                  android:layout_alignParentEnd="true"

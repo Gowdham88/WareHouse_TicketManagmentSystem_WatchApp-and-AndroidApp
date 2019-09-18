@@ -24,12 +24,12 @@
         <TextView
             android:id="@+id/name_dig"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="25dp"
             android:layout_centerVertical="true"
             android:gravity="center"
             android:textSize="20sp"
-            android:fontFamily="@font/nokia"
             android:text="DIGITAL WORK FORCE"
+            android:fontFamily="@font/nokia"
             android:textColor="@android:color/white" />
 
         <LinearLayout

@@ -21,11 +21,14 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.RemoteViews;
 import android.widget.TextView;
@@ -72,6 +75,7 @@ public class MainActivity extends Activity {
 
     Intent sIntent;
     String shiftTime;
+    String shiftTimeResponce="A";
     private Button trend;
     ImageView mainOpen,mainClose,mainOngoing;
 
@@ -90,18 +94,15 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       /* if(!isMyServiceRunning(CheckNotification.class)){
-           sIntent= new Intent(MainActivity.this, CheckNotification.class);
+        if(!isMyServiceRunning(Notify.class)){
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                startForegroundService(sIntent);
+                 scheduleJob();
             }
-        }*/
+        }
 
         intialize();
         Methods();
        // getToken();
-
-        scheduleJob();
 
     }
     @Override
@@ -297,65 +298,67 @@ public class MainActivity extends Activity {
         TimePickerDialog dialog=new TimePickerDialog(MainActivity.this, new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                showTime();
+                int curentHour = hourOfDay;
+                if (curentHour >= 6 && curentHour < 14) {
+                    shiftTimeResponce = "A";
+                } else if (curentHour >= 14 && curentHour < 22) {
+                    shiftTimeResponce = "B";
+                } else {
+                    shiftTimeResponce = "C";
+                }
             }
-        },hour,min,false);
+        },hour,min,true);
         dialog.setTitle("Pick Time");
         dialog.show();
 
     }
 
-    public void showTime() {
+    void showTime(){
 
-        Calendar cal=Calendar.getInstance(TimeZone.getTimeZone("GMT+5:30"));
+        Thread t= new Thread(){
+            @Override
+            public void run() {
+                while (!isInterrupted()) {
+                    try {
+                        Thread.sleep(1000);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                String shiftTime;
+                                Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("GMT+5:30"));
+                                Date currentLocalTime = cal.getTime();
+                                DateFormat dat = new SimpleDateFormat("HH:mm:ss ");
+                                dat.setTimeZone(TimeZone.getTimeZone("GMT+5:30"));
+                                String localTime = dat.format(currentLocalTime);
 
-        int curentHour=cal.get(Calendar.HOUR_OF_DAY);
-        if(curentHour>=6 && curentHour<14 ){
-            shiftTime="A";
-        }else if(curentHour>=14 && curentHour<22){
-            shiftTime="B";
-        }else {
-            shiftTime="C";
-        }
+                                int curentHour = cal.get(Calendar.HOUR_OF_DAY);
+                                if (curentHour >= 6 && curentHour < 14) {
+                                    shiftTime = "A";
+                                } else if (curentHour >= 14 && curentHour < 22) {
+                                    shiftTime = "B";
+                                } else {
+                                    shiftTime = "C";
+                                }
 
-        int hour = calendar1.get(Calendar.HOUR_OF_DAY);
-        int min = calendar1.get(Calendar.MINUTE);
+                                Date currentTime = Calendar.getInstance().getTime();
+                                SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+                                String formattedDate = df.format(currentTime);
 
-        String prefix_h,prefix_m;
+                                mDate.setText(formattedDate + "\n" + localTime);
+                                time.setText("SHIFT:" + shiftTime);
+                            }
+                        });
 
-        if (hour == 0) {
-            hour += 12;
-            format = "AM";
-        } else if (hour == 12) {
-            format = "PM";
-        } else if (hour > 12) {
-            hour -= 12;
-            format = "PM";
-        } else {
-            format = "AM";
-        }
-
-        if(hour==10||hour==11||hour==12||hour==22||hour==23||hour==24)
-            prefix_h="";
-        else
-            prefix_h="0";
-
-        if(min<10)
-            prefix_m="0";
-        else prefix_m="";
-
-        StringBuilder builder=new StringBuilder().append(prefix_h).append(hour).append(" : ").append(prefix_m).append(min)
-                .append(" ").append(format);
-        time.setText(shiftTime + "\n"+builder);
-
-
-        Calendar calendar=Calendar.getInstance();
-        int year=calendar.get(Calendar.YEAR);
-        int month=calendar.get(Calendar.MONTH);
-        int day=calendar.get(Calendar.DAY_OF_MONTH);
-
-        mDate.setText(day+"/"+month+"/"+year);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        };
+        t.start();
     }
+
+
 
     private void Methods() {
         mainOpen.setOnClickListener(new View.OnClickListener() {
@@ -394,7 +397,7 @@ public class MainActivity extends Activity {
                 startActivity(i);
             }
         });
-     /*   mDate.setOnClickListener(new View.OnClickListener() {
+        mDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Calendar cal=Calendar.getInstance();
@@ -413,8 +416,11 @@ public class MainActivity extends Activity {
         mDateSetListener=new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                String date=dayOfMonth+"/"+month+"/"+year;
-                mDate.setText(date);
+
+                String date=""+year+""+(month<9?("0"+(month+1)):month+1)+""+(dayOfMonth<10?("0"+dayOfMonth):dayOfMonth)+shiftTimeResponce;
+                Intent i=new Intent(MainActivity.this,ResponceActivity.class);
+                i.putExtra("date",date);
+                startActivity(i);
             }
         };
         time.setOnClickListener(new View.OnClickListener() {
@@ -422,7 +428,7 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 setTime();
             }
-        }); */
+        });
     }
 
     void nextActivity(String status){
@@ -430,30 +436,4 @@ public class MainActivity extends Activity {
         i.putExtra("status",status);
         startActivity(i);
     }
-      /*  private void getToken(){
-            FirebaseInstanceId.getInstance().getInstanceId()
-                    .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<InstanceIdResult> task) {
-                            if (!task.isSuccessful()) {
-                                Log.w(TAG, "getInstanceId failed", task.getException());
-                                return;
-                            }
-
-                            // Get new Instance ID token
-                            String token = task.getResult().getToken();
-
-                            // Log and toast
-                            //String msg = getString(R.string.msg_token_fmt, token);
-                            Log.d(TAG, token);
-                        }
-                    });
-
-            FirebaseMessaging.getInstance().subscribeToTopic("notification").addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
-
-                }
-            });
-        }*/
-    }
+}

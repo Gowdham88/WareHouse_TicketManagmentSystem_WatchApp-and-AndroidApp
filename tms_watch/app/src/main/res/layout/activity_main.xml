@@ -115,10 +115,11 @@
                    </LinearLayout>
                    <TextView
                        android:id="@+id/tot_open"
-                       android:layout_width="30dp"
-                       android:layout_height="30dp"
+                       android:layout_width="36dp"
+                       android:layout_height="36dp"
                        android:text="0"
-                       android:textSize="16sp"
+                       android:textSize="18sp"
+                       android:textStyle="bold"
                        android:layout_marginStart="70dp"
                        android:gravity="center"
                        android:textColor="@android:color/black"
@@ -150,10 +151,11 @@
                 </LinearLayout>
                     <TextView
                         android:id="@+id/tot_on"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
                         android:text="0"
-                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
                         android:layout_marginStart="70dp"
                         android:gravity="center"
                         android:textColor="@android:color/black"
